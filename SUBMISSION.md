@@ -12,18 +12,18 @@
 - [x] `CONNECTORS.md` documenting MCP tools
 - [x] `.mcp.json` configuration file
 - [x] Tax facts verified for 2026/27 (last_reviewed: 2026-04-24)
-- [ ] Repo published as standalone at `github.com/thriveventurelabs/accountsos-cowork-plugin`
+- [ ] Repo published as standalone at `github.com/thriveventurelabs/accountsos-agent-plugin`
 - [ ] Submitted to Anthropic plugin directory
 
 ## How to publish + submit
 
 1. **Push to standalone repo**
    ```bash
-   cd accountsos-cowork-plugin
+   cd accountsos-agent-plugin
    git init
    git add .
    git commit -m "Initial release v1.1.0 (UK tax 2026/27)"
-   git remote add origin git@github.com:thriveventurelabs/accountsos-cowork-plugin.git
+   git remote add origin git@github.com:thriveventurelabs/accountsos-agent-plugin.git
    git push -u origin main
    git tag v1.1.0
    git push origin v1.1.0

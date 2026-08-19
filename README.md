@@ -13,7 +13,7 @@ Built on the AccountsOS MCP server. Pairs with Anthropic's official [knowledge-w
 ### Via Claude (Cowork or Claude Code)
 
 ```bash
-claude plugin install thriveventurelabs/accountsos-cowork-plugin
+claude plugin install thriveventurelabs/accountsos-agent-plugin
 ```
 
 ### Via Grok Build
@@ -24,7 +24,7 @@ Install `accountsos` from the built-in plugin marketplace (`xai-org/plugin-marke
 
 ```bash
 cd ~/.claude/plugins
-git clone https://github.com/thriveventurelabs/accountsos-cowork-plugin.git
+git clone https://github.com/thriveventurelabs/accountsos-agent-plugin.git
 ```
 
 ## Configure

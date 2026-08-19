@@ -4,7 +4,7 @@
   "version": "1.2.0",
   "author": "Thrive Venture Labs",
   "homepage": "https://accounts-os.com",
-  "repository": "https://github.com/thriveventurelabs/accountsos-cowork-plugin",
+  "repository": "https://github.com/thriveventurelabs/accountsos-agent-plugin",
   "license": "MIT",
   "tags": [
     "finance",
