@@ -1,8 +1,10 @@
-# AccountsOS — Claude Plugin
+# AccountsOS Agent Plugin
 
-UK accounting for Claude Cowork and Claude Code. Track transactions, manage VAT, monitor HMRC deadlines, and categorise expenses through natural language. Verified for the **2026/27 tax year**.
+UK accounting for Claude Cowork, Claude Code and Grok Build. Track transactions, manage VAT, monitor HMRC deadlines, and categorise expenses through natural language. Verified for the **2026/27 tax year**.
 
-Built on the AccountsOS MCP server. Pairs with Anthropic's official [knowledge-work-plugins/finance](https://github.com/anthropics/knowledge-work-plugins/tree/main/finance) — that plugin gives you US-GAAP methodology (journal entries, reconciliation, close management); this one gives you UK regulatory truth.
+One repo serves both ecosystems: `.claude-plugin/plugin.json` (Claude) and `.grok-plugin/plugin.json` (Grok Build) describe the same skills, commands and MCP connector.
+
+Built on the AccountsOS MCP server. Pairs with Anthropic's official [knowledge-work-plugins/finance](https://github.com/anthropics/knowledge-work-plugins/tree/main/finance): that plugin gives you US-GAAP methodology (journal entries, reconciliation, close management); this one gives you UK regulatory truth.
 
 ---
 
@@ -11,14 +13,18 @@ Built on the AccountsOS MCP server. Pairs with Anthropic's official [knowledge-w
 ### Via Claude (Cowork or Claude Code)
 
 ```bash
-claude plugin install paulgosnell/accountsos-cowork-plugin
+claude plugin install thriveventurelabs/accountsos-cowork-plugin
 ```
+
+### Via Grok Build
+
+Install `accountsos` from the built-in plugin marketplace (`xai-org/plugin-marketplace` catalog).
 
 ### Manual
 
 ```bash
 cd ~/.claude/plugins
-git clone https://github.com/paulgosnell/accountsos-cowork-plugin.git
+git clone https://github.com/thriveventurelabs/accountsos-cowork-plugin.git
 ```
 
 ## Configure
@@ -67,10 +73,10 @@ Full read/write access to your accounting data. See [CONNECTORS.md](./CONNECTORS
 
 ## What this plugin does that vanilla Claude doesn't
 
-Vanilla Claude knows accounting concepts but **drifts** on UK specifics — it'll quote a 2024/25 dividend allowance, an old VAT threshold, or a wrong CT filing rule. This plugin pins Claude to **verified, sourced** UK rules, every fact citing gov.uk.
+Vanilla Claude knows accounting concepts but **drifts** on UK specifics, it'll quote a 2024/25 dividend allowance, an old VAT threshold, or a wrong CT filing rule. This plugin pins Claude to **verified, sourced** UK rules, every fact citing gov.uk.
 
 Concretely:
-- Confirmation Statement fee: £34 online (NOT £13 — raised May 2024)
+- Confirmation Statement fee: £34 online (NOT £13, raised May 2024)
 - Dividend allowance: £500/year (NOT £1,000 or £2,000)
 - Class 2 NI: abolished for self-employed from April 2024
 - BADR rates: 18% from 6 April 2026 (was 14% 2025/26, was 10% before April 2025)
@@ -82,13 +88,21 @@ Concretely:
 
 ## Requirements
 
-- Claude Cowork or Claude Code with plugin support
-- AccountsOS account ([sign up free](https://accounts-os.com/signup) — Early Access pricing)
+- Claude Cowork, Claude Code or Grok Build with plugin support
+- AccountsOS account ([sign up free](https://accounts-os.com/signup), Early Access pricing)
 - API key with `read` + `write` scopes
+
+## Network endpoints and credentials
+
+Declared for plugin-marketplace security review:
+
+- **The only network endpoint this plugin calls is `https://accounts-os.com/api/mcp`** (the AccountsOS hosted MCP server, HTTPS), configured in [`.mcp.json`](./.mcp.json).
+- **The only credential it uses is `ACCOUNTSOS_API_KEY`**, read from your environment and sent as a Bearer token to that endpoint. You create and revoke the key yourself in AccountsOS Settings, scoped to `read` + `write` on your own company data.
+- No lifecycle hooks, no shell execution, no postinstall scripts, no telemetry. Skills and commands are plain markdown.
 
 ## Privacy
 
-Your AccountsOS data stays in your AccountsOS account (Supabase eu-west-2). The plugin sends queries to your AccountsOS API key and Claude reads the responses. No customer financial data is sent to Anthropic in your context except the responses you receive.
+Your AccountsOS data stays in your AccountsOS account (Supabase eu-west-2). The plugin sends queries to your AccountsOS API key and the agent reads the responses. No customer financial data is sent to the model provider in your context except the responses you receive.
 
 ## UK Specificity
 
