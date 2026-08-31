@@ -1,7 +1,7 @@
 {
   "name": "AccountsOS",
   "description": "AI-native UK accounting for limited companies and sole traders. Track transactions, manage VAT, monitor HMRC deadlines, log expenses, and handle invoices through natural language. Auto-fires UK tax knowledge skills (corporation tax, VAT, MTD, BADR, capital allowances) verified for the 2026/27 tax year.",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": "Thrive Venture Labs",
   "homepage": "https://accounts-os.com",
   "repository": "https://github.com/thriveventurelabs/accountsos-agent-plugin",

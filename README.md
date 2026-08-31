@@ -1,8 +1,8 @@
 # AccountsOS Agent Plugin
 
-UK accounting for Claude Cowork, Claude Code and Grok Build. Track transactions, manage VAT, monitor HMRC deadlines, and categorise expenses through natural language. Verified for the **2026/27 tax year**.
+UK accounting for Claude Cowork, Claude Code, Grok Build and Cursor. Track transactions, manage VAT, monitor HMRC deadlines, and categorise expenses through natural language. Verified for the **2026/27 tax year**.
 
-One repo serves both ecosystems: `.claude-plugin/plugin.json` (Claude) and `.grok-plugin/plugin.json` (Grok Build) describe the same skills, commands and MCP connector.
+One repo serves all three ecosystems: `.claude-plugin/plugin.json` (Claude), `.grok-plugin/plugin.json` (Grok Build) and `.cursor-plugin/plugin.json` (Cursor) describe the same skills, commands and MCP connector.
 
 Built on the AccountsOS MCP server. Pairs with Anthropic's official [knowledge-work-plugins/finance](https://github.com/anthropics/knowledge-work-plugins/tree/main/finance): that plugin gives you US-GAAP methodology (journal entries, reconciliation, close management); this one gives you UK regulatory truth.
 
@@ -20,6 +20,10 @@ claude plugin install thriveventurelabs/accountsos-agent-plugin
 
 Install `accountsos` from the built-in plugin marketplace (`xai-org/plugin-marketplace` catalog).
 
+### Via Cursor
+
+Open **Cursor Settings → Plugins**, search for **AccountsOS**, click **Install**, then set your API key when prompted. Or run `/add-plugin accountsos` in chat.
+
 ### Manual
 
 ```bash
@@ -29,7 +33,7 @@ git clone https://github.com/thriveventurelabs/accountsos-agent-plugin.git
 
 ## Configure
 
-Set your AccountsOS API key as an environment variable:
+Set your AccountsOS API key as an environment variable (Cursor prompts for it in the plugin's Configure panel instead):
 
 ```bash
 export ACCOUNTSOS_API_KEY="sk_live_..."
@@ -88,7 +92,7 @@ Concretely:
 
 ## Requirements
 
-- Claude Cowork, Claude Code or Grok Build with plugin support
+- Claude Cowork, Claude Code, Grok Build or Cursor with plugin support
 - AccountsOS account ([sign up free](https://accounts-os.com/signup), Early Access pricing)
 - API key with `read` + `write` scopes
 
