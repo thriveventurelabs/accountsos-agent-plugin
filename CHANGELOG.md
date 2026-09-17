@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.2 - 2026-09-17
+
+- Claude Code now prompts for the API key when you enable the plugin (`userConfig.accountsos_api_key`, sensitive, stored in the system keychain) instead of requiring a manual `export`. Claude Code has no `${ACCOUNTSOS_API_KEY}` in scope, so the shared `.mcp.json` resolved to a literal and every Claude install failed its only connector with a 401. The Claude connector now reads `.claude-plugin/mcp.json` and interpolates `${user_config.accountsos_api_key}`. The root `.mcp.json` is untouched, so Grok Build and Cursor keep reading the environment variable.
+
 ## 1.3.1 - 2026-09-17
 
 - **The plugin is installable in Claude Code for the first time.** Added `.claude-plugin/marketplace.json`, which Claude Code requires to resolve a plugin from a git repo. Without it `/plugin marketplace add` had nothing to read.

@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "accountsos": {
+      "type": "http",
+      "url": "https://accounts-os.com/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.accountsos_api_key}"
+      }
+    }
+  }
+}

@@ -43,7 +43,11 @@ git clone https://github.com/thriveventurelabs/accountsos-agent-plugin.git
 
 ## Configure
 
-Set your AccountsOS API key as an environment variable (Cursor prompts for it in the plugin's Configure panel instead):
+**Claude Code / Cowork** prompts for the key when you enable the plugin and stores it in your system keychain. Nothing to export.
+
+**Cursor** prompts for it in the plugin's Configure panel.
+
+**Grok Build**, or a manual install, reads it from the environment:
 
 ```bash
 export ACCOUNTSOS_API_KEY="sk_live_..."
