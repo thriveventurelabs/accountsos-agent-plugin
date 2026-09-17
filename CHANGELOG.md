@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.4 - 2026-09-17
+
+- **Pinned the MCP server to `@thriveventurelabs/accountsos-mcp@0.3.1`.** `npx -y <pkg>` does not reliably fetch the latest version: npx caches by package spec, so a machine that has run the plugin once keeps running whatever build it first downloaded, indefinitely, even after `npm cache clean --force`. Verified: an unpinned spec kept serving a months-old build reporting version 0.1.0, while the pinned spec fetched 0.3.1. Pinning makes the version deterministic and makes every bump cache-busting.
+- **That stale build was serving 10 tools instead of 86.** AccountsOS exposes 86 MCP tools; the package asks the API for its live catalogue at startup, but the published tarball had been built before several of those improvements and fell back to a 10-tool built-in list. `get_invoices` and `get_dla_balance`, which `/invoices` and `/weekly-check` depend on, were among the missing.
+- Server-side fixes in `@thriveventurelabs/accountsos-mcp@0.3.1`: the catalogue fetch retries once with a 10s timeout, a failed fetch now logs a loud warning naming how many tools you are actually getting instead of degrading silently, and the reported version is read from `package.json` rather than a literal that had already drifted twice.
+- README: the tool count said 13 and named three tools the package did not ship. It is 86, fetched live.
+
 ## 1.3.3 - 2026-09-17
 
 - **The MCP connector could never complete a handshake in any ecosystem.** `.mcp.json` declared `type: "http"` against `https://accounts-os.com/api/mcp`, but that endpoint is not an MCP server. It answers exactly three JSON-RPC discovery methods (`initialize`, `tools/list`, `resources/list`) and expects every other call as a custom REST body (`{"type": "tool", "name", "arguments"}`), so a client got a clean `initialize` and then a `400 Request body must include type: "tool" or "resource"` on the very next message. The sibling endpoint `/api/mcp/plugin` does speak MCP, but it is OAuth-only and explicitly rejects `sk_` API keys, so it was never an option either.

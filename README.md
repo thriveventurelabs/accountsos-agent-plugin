@@ -79,9 +79,9 @@ Get your API key from [accounts-os.com](https://accounts-os.com) under Settings 
 | **expense-categories** | Expense / receipt / claim questions | What's deductible, mileage rates 45p/25p, home office (sole trader simplified £10/£18/£26), trivial benefits £50/£300, capital vs revenue |
 | **tax-deadlines** | Deadline / penalty / filing questions | CT600 (12m + 9m1d), Confirmation Statement (£34/£62 fee, 14 days), accounts (9m), VAT (1m+7d), SA (31 Jan online), MTD ITSA quarterly, late penalties |
 
-### 13 API Tools (via MCP)
+### 86 API Tools (via MCP)
 
-Full read/write access to your accounting data. See [CONNECTORS.md](./CONNECTORS.md) for the complete tool reference.
+Full read/write access to your accounting data. The tool list is fetched live from AccountsOS at startup, so it tracks whatever the product exposes rather than a list frozen in this package. See [CONNECTORS.md](./CONNECTORS.md) for the reference.
 
 **Read**: `get_transactions`, `get_balance`, `get_vat_summary`, `get_deadlines`, `get_invoices`, `get_dla_balance`, `list_categories`, `search_documents`
 

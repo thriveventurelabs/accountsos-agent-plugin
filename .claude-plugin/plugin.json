@@ -2,7 +2,7 @@
   "name": "accountsos",
   "displayName": "AccountsOS",
   "description": "AI-native accounting across 26 countries: ask your live ledger about transactions, VAT, deadlines, expenses and invoices in plain English. The bundled tax skills are UK-only for now (corporation tax, VAT, MTD, BADR, capital allowances, verified for the 2026/27 tax year). The UK is the proof jurisdiction with live HMRC MTD VAT filing, and the other 25 countries run as jurisdiction playbooks in the product.",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "author": {
     "name": "Thrive Venture Labs",
     "email": "hello@accounts-os.com",

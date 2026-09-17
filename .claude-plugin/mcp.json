@@ -2,7 +2,10 @@
   "mcpServers": {
     "accountsos": {
       "command": "npx",
-      "args": ["-y", "@thriveventurelabs/accountsos-mcp"],
+      "args": [
+        "-y",
+        "@thriveventurelabs/accountsos-mcp@0.3.1"
+      ],
       "env": {
         "ACCOUNTSOS_API_KEY": "${user_config.accountsos_api_key}"
       }
