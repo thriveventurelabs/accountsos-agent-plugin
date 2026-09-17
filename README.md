@@ -114,9 +114,9 @@ Concretely:
 
 Declared for plugin-marketplace security review:
 
-- **The only network endpoint this plugin calls is `https://accounts-os.com/api/mcp`** (the AccountsOS hosted MCP server, HTTPS), configured in [`.mcp.json`](./.mcp.json).
+- **The only network endpoint this plugin calls is `https://accounts-os.com/api/mcp`** (the AccountsOS API, HTTPS). It is reached through the published stdio MCP server [`@thriveventurelabs/accountsos-mcp`](https://www.npmjs.com/package/@thriveventurelabs/accountsos-mcp), launched with `npx` and configured in [`.mcp.json`](./.mcp.json) (Grok Build, Cursor) and [`.claude-plugin/mcp.json`](./.claude-plugin/mcp.json) (Claude). Source: https://github.com/thriveventurelabs/accountsos-mcp-server
 - **The only credential it uses is `ACCOUNTSOS_API_KEY`**, read from your environment and sent as a Bearer token to that endpoint. You create and revoke the key yourself in AccountsOS Settings, scoped to `read` + `write` on your own company data.
-- No lifecycle hooks, no shell execution, no postinstall scripts, no telemetry. Skills and commands are plain markdown.
+- No lifecycle hooks, no postinstall scripts, no telemetry. Skills and commands are plain markdown. The one process the plugin starts is that npm MCP server.
 
 ## Privacy
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.3 - 2026-09-17
+
+- **The MCP connector could never complete a handshake in any ecosystem.** `.mcp.json` declared `type: "http"` against `https://accounts-os.com/api/mcp`, but that endpoint is not an MCP server. It answers exactly three JSON-RPC discovery methods (`initialize`, `tools/list`, `resources/list`) and expects every other call as a custom REST body (`{"type": "tool", "name", "arguments"}`), so a client got a clean `initialize` and then a `400 Request body must include type: "tool" or "resource"` on the very next message. The sibling endpoint `/api/mcp/plugin` does speak MCP, but it is OAuth-only and explicitly rejects `sk_` API keys, so it was never an option either.
+- Both configs now run the published stdio server, `@thriveventurelabs/accountsos-mcp`, which is what translates MCP to that REST API and is the transport Claude Desktop has always used. `.claude-plugin/mcp.json` takes the key from `userConfig`; the root `.mcp.json` takes it from `ACCOUNTSOS_API_KEY` for Grok Build and Cursor.
+
 ## 1.3.2 - 2026-09-17
 
 - Claude Code now prompts for the API key when you enable the plugin (`userConfig.accountsos_api_key`, sensitive, stored in the system keychain) instead of requiring a manual `export`. Claude Code has no `${ACCOUNTSOS_API_KEY}` in scope, so the shared `.mcp.json` resolved to a literal and every Claude install failed its only connector with a 401. The Claude connector now reads `.claude-plugin/mcp.json` and interpolates `${user_config.accountsos_api_key}`. The root `.mcp.json` is untouched, so Grok Build and Cursor keep reading the environment variable.

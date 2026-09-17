@@ -1,10 +1,10 @@
 {
   "mcpServers": {
     "accountsos": {
-      "type": "http",
-      "url": "https://accounts-os.com/api/mcp",
-      "headers": {
-        "Authorization": "Bearer ${ACCOUNTSOS_API_KEY}"
+      "command": "npx",
+      "args": ["-y", "@thriveventurelabs/accountsos-mcp"],
+      "env": {
+        "ACCOUNTSOS_API_KEY": "${ACCOUNTSOS_API_KEY}"
       }
     }
   }
