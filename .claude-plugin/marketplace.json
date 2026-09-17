@@ -1,0 +1,28 @@
+{
+  "name": "accountsos",
+  "description": "Official AccountsOS plugin marketplace from Thrive Venture Labs: the AccountsOS agent plugin for your live accounting ledger.",
+  "owner": {
+    "name": "Thrive Venture Labs",
+    "email": "hello@accounts-os.com"
+  },
+  "plugins": [
+    {
+      "name": "accountsos",
+      "source": "./",
+      "description": "AI-native accounting across 26 countries: ask your live ledger about transactions, VAT, deadlines, expenses and invoices in plain English. The bundled tax skills are UK-only for now. The UK is the proof jurisdiction with live HMRC MTD VAT filing, and the other 25 countries run as jurisdiction playbooks in the product.",
+      "category": "productivity",
+      "homepage": "https://accounts-os.com",
+      "keywords": [
+        "accounting",
+        "finance",
+        "bookkeeping",
+        "vat",
+        "tax",
+        "hmrc",
+        "invoices",
+        "expenses",
+        "mtd"
+      ]
+    }
+  ]
+}

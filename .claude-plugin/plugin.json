@@ -1,42 +1,35 @@
 {
-  "name": "AccountsOS",
-  "description": "AI-native UK accounting for limited companies and sole traders. Track transactions, manage VAT, monitor HMRC deadlines, log expenses, and handle invoices through natural language. Auto-fires UK tax knowledge skills (corporation tax, VAT, MTD, BADR, capital allowances) verified for the 2026/27 tax year.",
-  "version": "1.3.0",
-  "author": "Thrive Venture Labs",
+  "name": "accountsos",
+  "displayName": "AccountsOS",
+  "description": "AI-native accounting across 26 countries: ask your live ledger about transactions, VAT, deadlines, expenses and invoices in plain English. The bundled tax skills are UK-only for now (corporation tax, VAT, MTD, BADR, capital allowances, verified for the 2026/27 tax year). The UK is the proof jurisdiction with live HMRC MTD VAT filing, and the other 25 countries run as jurisdiction playbooks in the product.",
+  "version": "1.3.1",
+  "author": {
+    "name": "Thrive Venture Labs",
+    "email": "hello@accounts-os.com",
+    "url": "https://accounts-os.com"
+  },
   "homepage": "https://accounts-os.com",
   "repository": "https://github.com/thriveventurelabs/accountsos-agent-plugin",
   "license": "MIT",
-  "tags": [
+  "keywords": [
     "finance",
     "accounting",
-    "uk",
     "vat",
     "tax",
     "bookkeeping",
     "hmrc",
     "companies-house",
-    "mtd"
+    "mtd",
+    "invoices",
+    "expenses"
   ],
-  "skills": [
-    "skills/uk-accounting",
-    "skills/vat-rules",
-    "skills/expense-categories",
-    "skills/tax-deadlines"
-  ],
-  "commands": [
-    "commands/weekly-check",
-    "commands/log-expense",
-    "commands/vat-check",
-    "commands/deadlines",
-    "commands/invoices",
-    "commands/categorize"
-  ],
-  "connectors": [
-    ".mcp.json"
-  ],
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "mcpServers": "./.mcp.json",
   "metadata": {
     "tax_year": "2026/27",
-    "last_reviewed": "2026-08-19",
-    "country": "GB"
+    "last_reviewed": "2026-09-17",
+    "tax_skills_country": "GB",
+    "countries_live": 26
   }
 }

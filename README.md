@@ -1,6 +1,8 @@
 # AccountsOS Agent Plugin
 
-UK accounting for Claude Cowork, Claude Code, Grok Build and Cursor. Track transactions, manage VAT, monitor HMRC deadlines, and categorise expenses through natural language. Verified for the **2026/27 tax year**.
+AI-native accounting across **26 countries** for Claude Code, Claude Cowork, Grok Build and Cursor. Ask your live AccountsOS ledger about transactions, VAT, deadlines, expenses and invoices in plain English.
+
+The tax skills bundled in this plugin are **UK-only for now**, verified for the **2026/27 tax year**. The UK is the proof jurisdiction: HMRC MTD VAT filing is live with official receipts. The other 25 countries run as jurisdiction playbooks inside AccountsOS itself, reachable through the MCP tools below.
 
 One repo serves all three ecosystems: `.claude-plugin/plugin.json` (Claude), `.grok-plugin/plugin.json` (Grok Build) and `.cursor-plugin/plugin.json` (Cursor) describe the same skills, commands and MCP connector.
 
@@ -12,8 +14,16 @@ Built on the AccountsOS MCP server. Pairs with Anthropic's official [knowledge-w
 
 ### Via Claude (Cowork or Claude Code)
 
+```
+/plugin marketplace add thriveventurelabs/accountsos-agent-plugin
+/plugin install accountsos@accountsos
+```
+
+Or from the shell:
+
 ```bash
-claude plugin install thriveventurelabs/accountsos-agent-plugin
+claude plugin marketplace add thriveventurelabs/accountsos-agent-plugin
+claude plugin install accountsos@accountsos
 ```
 
 ### Via Grok Build
@@ -108,11 +118,11 @@ Declared for plugin-marketplace security review:
 
 Your AccountsOS data stays in your AccountsOS account (Supabase eu-west-2). The plugin sends queries to your AccountsOS API key and the agent reads the responses. No customer financial data is sent to the model provider in your context except the responses you receive.
 
-## UK Specificity
+## Countries
 
-Built for UK Limited Companies and sole traders. Knows HMRC rules, Companies House requirements, VAT schemes, MTD compliance, and 2026/27 tax year figures.
+AccountsOS runs jurisdiction playbooks for 26 countries: GB, IE, AU, US, AE, BG, HK, TR, IM, GG, DE, DK, SG, NL, SE, IN, CH, CA, AT, NO, NZ, SI, PA, CY, MT, BE. Bookkeeping, invoicing, expenses, reporting and multi-currency work everywhere; the MCP tools in this plugin read and write whichever ledger your API key belongs to.
 
-For US, AU, UAE, India: see roadmap on [accounts-os.com/roadmap](https://accounts-os.com).
+The **tax skills shipped in this plugin are GB-only**. They pin the agent to HMRC and Companies House rules for the 2026/27 tax year: corporation tax, VAT schemes, MTD, capital allowances, BADR, filing deadlines and penalties. The UK is the proof jurisdiction, with live HMRC MTD VAT filings returning official receipts. Filing coverage in the other 25 countries is a playbook in the product, not a skill in this plugin, so do not read the country count as universal filing support.
 
 ---
 
