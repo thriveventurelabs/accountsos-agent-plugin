@@ -76,7 +76,7 @@ Get your API key from [accounts-os.com](https://accounts-os.com) under Settings 
 |-------|--------------|--------|
 | **uk-accounting** | Director / CT / dividends / capital allowances queries | Corp Tax 2026/27 (19/25%), dividend allowance £500, salary vs dividend, DLA + S455, capital allowances (AIA £1m + Full Expensing), R&D merged scheme, BADR (10/14/18%) |
 | **vat-rules** | VAT / MTD / registration questions | £90k registration threshold, £88k deregistration, schemes (Standard/Cash/Flat Rate/Annual), MTD VAT mandatory, MTD ITSA from April 2026 |
-| **expense-categories** | Expense / receipt / claim questions | What's deductible, mileage rates 45p/25p, home office (sole trader simplified £10/£18/£26), trivial benefits £50/£300, capital vs revenue |
+| **expense-categories** | Expense / receipt / claim questions | What's deductible, mileage rates 55p/25p from 6 April 2026, home office (sole trader simplified £10/£18/£26), trivial benefits £50/£300, capital vs revenue |
 | **tax-deadlines** | Deadline / penalty / filing questions | CT600 (12m + 9m1d), Confirmation Statement (£34/£62 fee, 14 days), accounts (9m), VAT (1m+7d), SA (31 Jan online), MTD ITSA quarterly, late penalties |
 
 ### 86 API Tools (via MCP)

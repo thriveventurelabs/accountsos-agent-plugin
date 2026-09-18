@@ -52,8 +52,8 @@ Source: <https://www.gov.uk/expenses-if-youre-self-employed>
 
 ### Mileage (using personal vehicle for business)
 
-HMRC approved mileage rates (unchanged for years):
-- **Car or van**: 45p per mile for the first 10,000 business miles, 25p thereafter
+HMRC approved mileage rates:
+- **Car or van**: **55p per mile for the first 10,000 business miles from 6 April 2026** (45p before that date), 25p thereafter
 - **Motorcycle**: 24p per mile
 - **Bicycle**: 20p per mile
 - **Passenger payment**: 5p per mile per passenger

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.5 - 2026-09-18
+
+- **Corrected the HMRC mileage rate. The skill was teaching a rate that is a year out of date.** `expense-categories` stated "45p per mile for the first 10,000 business miles" and described the rates as "unchanged for years". gov.uk states **55p from 6 April 2026 (45p before 6 April 2026)**, 25p thereafter. AccountsOS's own tax data (`lib/tax/uk-tax-data.ts`) already had 55p; only the plugin copy was stale. Since the plugin's stated purpose is pinning the agent to verified UK figures, and it advertises the 2026/27 tax year, this was the plugin failing at the one job it exists to do.
+- Swept the other headline figures in all four skills against the same source: dividend allowance £500, VAT registration £90,000 and deregistration £88,000, trivial benefits £50 per item and £300 per director per year, annual staff event £150 per head, simplified home office £6/week (£312/year), Class 2 NI abolished. All correct, left unchanged.
+- `metadata.last_reviewed` on 1.3.2 to 1.3.4 said `2026-09-17`, which claimed a tax review that had not happened on that date (only the manifests were touched). This release is the first where the tax content was actually re-checked against gov.uk.
+
 ## 1.3.4 - 2026-09-17
 
 - **Pinned the MCP server to `@thriveventurelabs/accountsos-mcp@0.3.1`.** `npx -y <pkg>` does not reliably fetch the latest version: npx caches by package spec, so a machine that has run the plugin once keeps running whatever build it first downloaded, indefinitely, even after `npm cache clean --force`. Verified: an unpinned spec kept serving a months-old build reporting version 0.1.0, while the pinned spec fetched 0.3.1. Pinning makes the version deterministic and makes every bump cache-busting.
