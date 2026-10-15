@@ -138,3 +138,7 @@ The **tax skills shipped in this plugin are GB-only**. They pin the agent to HMR
 - [Anthropic finance plugin (companion)](https://github.com/anthropics/knowledge-work-plugins/tree/main/finance)
 
 Built by [Thrive Venture Labs](https://thriveventurelabs.com)
+
+## Disclaimer
+
+This software provides general guidance about UK tax and accounting rules. It is not a substitute for professional advice from a qualified accountant or tax adviser. Always verify with HMRC source documents and consult a professional for advice specific to your circumstances.
